@@ -73,7 +73,8 @@ pipeline {
       steps {
         echo "------------>Build<------------"
         dir('microservicio'){
-           sh 'gradlew --b ./build.gradle build -x test'
+            sh 'chmod +x gradlew'
+            sh './gradlew --b ./build.gradle build -x test'
         }
        
       }
