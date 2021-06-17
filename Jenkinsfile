@@ -49,9 +49,12 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-          sh 'pwd'
-          sh 'chmod +x gradlew'
-          sh './gradlew --b ./build.gradle test'
+          dir('microservicio'){
+             sh 'pwd'
+             sh 'chmod +x gradlew'
+             sh './gradlew --b ./build.gradle test'
+          }
+         
       }
     }
 
