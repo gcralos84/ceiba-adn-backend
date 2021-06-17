@@ -50,7 +50,6 @@ pipeline {
       steps{
         echo "------------>Compile & Unit Tests<------------"
           dir('microservicio'){
-             sh 'pwd'
              sh 'chmod +x gradlew'
              sh './gradlew --b ./build.gradle test'
           }
