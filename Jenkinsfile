@@ -86,8 +86,12 @@ pipeline {
       echo 'This will always run'
     }
     success {
-      echo 'This will run only if successful'
-      junit 'dominio/build/test-results/test/*.xml'
+      
+      dir('microservicio'){
+        echo 'This will run only if successful'
+        junit 'dominio/build/test-results/test/*.xml'
+      }
+      
     }
     failure {
       echo 'This will run only if failed'
