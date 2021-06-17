@@ -49,7 +49,7 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-          sh 'cd microservicio'
+          sh 'pwd'
           sh 'chmod +x gradlew'
           sh './gradlew --b ./build.gradle test'
       }
