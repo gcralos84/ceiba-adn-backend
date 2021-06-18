@@ -51,7 +51,7 @@ public class RepositorioPacienteMysql  implements RepositorioPaciente {
     @Override
     public boolean existe(String identificacion) {
         MapSqlParameterSource  mapSqlParameter  = new MapSqlParameterSource();
-        mapSqlParameter.addValue("id",identificacion);
+        mapSqlParameter.addValue("identificacion",identificacion);
         return this.customNamedParameterJdbcTemplate
                 .getNamedParameterJdbcTemplate()
                 .queryForObject(sqlExiste,mapSqlParameter,Boolean.class);

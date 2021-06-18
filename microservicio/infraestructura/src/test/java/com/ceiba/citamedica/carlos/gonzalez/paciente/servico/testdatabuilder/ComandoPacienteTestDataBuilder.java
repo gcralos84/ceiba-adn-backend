@@ -14,7 +14,7 @@ public class ComandoPacienteTestDataBuilder {
     public ComandoPacienteTestDataBuilder() {
         LocalDate localDate = LocalDate.now();
         id=2L;
-        identificacion = "94552554";
+        identificacion = "945525541";
         nombre="Carlos Arturo  Gonzalez";
         tipoUsuario="Tipo I";
         fechaNacimiento=localDate;

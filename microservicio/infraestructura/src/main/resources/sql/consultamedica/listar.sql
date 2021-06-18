@@ -1,0 +1,2 @@
+SELECT id, identificacionEspecialista,identificacionPaciente,fechaCita,tipoUsuario
+FROM  consultamedicas;

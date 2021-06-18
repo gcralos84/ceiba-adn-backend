@@ -14,7 +14,7 @@ public class MapeoConsultaMedica  implements RowMapper<DtoConsultaMedica>, Mappe
     public DtoConsultaMedica mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         Long id = resultSet.getLong("id");
         String identificacionEspecialista   = resultSet.getString("identificacionEspecialista");
-        String identificacionPaciente = resultSet.getString("identificacionPaciente;");
+        String identificacionPaciente = resultSet.getString("identificacionPaciente");
         Date fechaCita  =  resultSet.getDate("fechaCita");
         String tipoUsuario =  resultSet.getString("tipoUsuario");
         return  new  DtoConsultaMedica( id, identificacionEspecialista,identificacionPaciente,fechaCita,tipoUsuario);

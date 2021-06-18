@@ -10,7 +10,7 @@ import java.util.Date;
 public class DtoConsultaMedica {
      private Long  id;
      private String  identificacionEspecialista;
-     private String  identificacionPacinete;
+     private String  identificacionPaciente;
      private Date fechaCita;
      private String tipoUsuario;
 

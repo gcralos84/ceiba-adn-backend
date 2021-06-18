@@ -11,3 +11,10 @@ CREATE  TABLE IF NOT EXISTS  especialistas(
   nombre  varchar(50) not null,
   especialidad varchar(50) not null
 );
+CREATE TABLE IF NOT EXISTS  consultamedicas(
+    id  integer primary key auto_increment,
+    identificacionEspecialista   varchar(50) not null,
+    identificacionPaciente varchar(50) not null,
+    fechaCita  timestamp,
+    tipoUsuario varchar(10) not null
+);
