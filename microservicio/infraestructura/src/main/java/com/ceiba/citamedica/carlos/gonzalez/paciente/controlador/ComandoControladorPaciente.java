@@ -37,8 +37,8 @@ public class ComandoControladorPaciente {
     }
     @DeleteMapping("/{id}")
     @ApiOperation("Eliminar paciente")
-    public void  eliminar(@PathVariable String id){
-        manejadorEliminarPaciente.ejecutar(Long.valueOf(id));
+    public void  eliminar(@PathVariable Long id){
+        manejadorEliminarPaciente.ejecutar(id);
     }
     
 }

@@ -42,7 +42,7 @@ public class RepositorioPacienteMysql  implements RepositorioPaciente {
     @Override
     public void eliminar(Long id) {
         MapSqlParameterSource  mapSqlParameter =  new MapSqlParameterSource();
-        mapSqlParameter.addValue("id",id);
+        mapSqlParameter.addValue("identificacion",id);
         this.customNamedParameterJdbcTemplate
                 .getNamedParameterJdbcTemplate()
                 .update(sqlEliminar,mapSqlParameter);

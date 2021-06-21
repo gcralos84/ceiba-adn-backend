@@ -1,1 +1,1 @@
-DELETE FROM  pacientes WHERE id = :id
+DELETE FROM  pacientes WHERE identificacion = :identificacion

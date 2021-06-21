@@ -48,7 +48,7 @@ public class ComandoControladorPacienteTest {
     @Test
     public void  actulizarTest() throws Exception {
         //act - assert
-        String  identificacion ="9455255";
+        String  identificacion ="945525541";
         //act - assert
         mocMvc.perform(put("/paciente/{id}",identificacion)
                 .contentType(MediaType.APPLICATION_JSON)
@@ -58,7 +58,7 @@ public class ComandoControladorPacienteTest {
     @Test
     public void  eliminarTest() throws Exception {
         //act - assert
-        String  identificacion ="9455255";
+        String  identificacion ="945525541";
         //act - assert
         mocMvc.perform(delete("/paciente/{id}",identificacion)
                 .contentType(MediaType.APPLICATION_JSON)
