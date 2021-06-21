@@ -19,7 +19,7 @@ public class Especialista {
     public Especialista(Long id, String identificacion, String nombre, String especialidad) {
         validarObligatorio(identificacion,SE_DEBE_INGRESAR_IDENTIFICACION_USUARIO.getMensage());
         validarObligatorio(nombre,SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO.getMensage());
-        validarObligatorio(especialidad,SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO.getMensage());
+        validarObligatorio(especialidad,SE_DEBE_INGREZAR_LA_ESPECILIDAD.getMensage());
         this.id = id;
         this.identificacion = identificacion;
         this.nombre = nombre;
