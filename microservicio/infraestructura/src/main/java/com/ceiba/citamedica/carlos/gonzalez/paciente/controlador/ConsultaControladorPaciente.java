@@ -25,6 +25,7 @@ class ConsultaControladorPaciente {
     public List<DtoPaciente> listar(){
          return   this.manejadorListarPaciente.ejecutar();
     }
+
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET,  path="/{identificacion}")
     @ApiOperation(" Listar paciente")
