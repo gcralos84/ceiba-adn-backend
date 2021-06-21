@@ -4,11 +4,10 @@ import com.ceiba.citamedica.carlos.gonzalez.paciente.modelo.dto.DtoPaciente;
 import com.ceiba.citamedica.carlos.gonzalez.paciente.consulta.ManejadorListarPaciente;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/paciente")
@@ -20,9 +19,17 @@ class ConsultaControladorPaciente {
         this.manejadorListarPaciente = manejadorListarPaciente;
     }
     
-    @GetMapping
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET)
     @ApiOperation(" Listar paciente")
     public List<DtoPaciente> listar(){
          return   this.manejadorListarPaciente.ejecutar();
+    }
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET,  path="/{identificacion}")
+    @ApiOperation(" Listar paciente")
+    public List<DtoPaciente> listar(@PathVariable String identificacion ){
+        return   this.manejadorListarPaciente.ejecutar()
+                .stream().filter(x -> x.getIdentificacion().equals(identificacion)).collect(Collectors.toList());
     }
 }

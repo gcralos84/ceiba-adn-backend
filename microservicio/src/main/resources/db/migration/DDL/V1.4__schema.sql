@@ -18,3 +18,4 @@ CREATE TABLE IF NOT EXISTS  consultamedicas(
     fechaCita  timestamp,
     tipoUsuario varchar(10) not null
 );
+

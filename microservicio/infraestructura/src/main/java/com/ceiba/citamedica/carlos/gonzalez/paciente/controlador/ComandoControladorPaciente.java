@@ -23,7 +23,8 @@ public class ComandoControladorPaciente {
         this.manejadorActulizarPaciente = manejadorActulizarPaciente;
         this.manejadorEliminarPaciente = manejadorEliminarPaciente;
     }
-    @PostMapping
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST)
     @ApiOperation("Crear Paciente")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoPaciente comandoPaciente){
         return  manejadorCrearPaciente.ejecutar(comandoPaciente);
