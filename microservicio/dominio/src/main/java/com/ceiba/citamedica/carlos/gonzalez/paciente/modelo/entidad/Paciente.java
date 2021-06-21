@@ -10,11 +10,11 @@ import static com.ceiba.citamedica.carlos.gonzalez.dominio.ValidadorArgumento.va
 
 @Getter
 public class Paciente {
-    private final Mensage SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO = Mensage.MENSAGE_NOMBRE_USUARIO_REQUERIDO;
-    private final Mensage SE_DEBE_INGRESAR_EL_TIPO_DE_USUARIO = Mensage.MENSAGE_TIPO_USUARIO_REQUERIDO;
-    private final Mensage SE_DEBE_INGRESAR_IDENTIFICACION_USUARIO = Mensage.MENSAGE_IDENTIFICACION_REQUERIDO;
-    private final Mensage SE_DEBE_INGRESAR_LA_FECHA_NACIMIENTO = Mensage.MENSAGE_FECHA_NACIMIENTO_REQUERIDO;
-    private final Mensage SE_DEBE_INGRESAR_UNA_FECHA_VALIDA= Mensage.MENSAGE_FECHA_NACIMIENTO_INVALIDA;
+    private static final Mensage SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO = Mensage.MENSAGE_NOMBRE_USUARIO_REQUERIDO;
+    private static final Mensage SE_DEBE_INGRESAR_EL_TIPO_DE_USUARIO = Mensage.MENSAGE_TIPO_USUARIO_REQUERIDO;
+    private static final Mensage SE_DEBE_INGRESAR_IDENTIFICACION_USUARIO = Mensage.MENSAGE_IDENTIFICACION_REQUERIDO;
+    private static final Mensage SE_DEBE_INGRESAR_LA_FECHA_NACIMIENTO = Mensage.MENSAGE_FECHA_NACIMIENTO_REQUERIDO;
+    private static final Mensage SE_DEBE_INGRESAR_UNA_FECHA_VALIDA= Mensage.MENSAGE_FECHA_NACIMIENTO_INVALIDA;
 
     private  Long  id;
     private  String  nombre;

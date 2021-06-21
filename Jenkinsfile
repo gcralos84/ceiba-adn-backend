@@ -51,6 +51,7 @@ pipeline {
         echo "------------>Compile & Unit Tests<------------"
           dir('microservicio'){
              sh 'chmod +x gradlew'
+             sh './gradlew  clean'
              sh './gradlew --b ./build.gradle test'
           }
          
@@ -74,6 +75,7 @@ pipeline {
         echo "------------>Build<------------"
         dir('microservicio'){
             sh 'chmod +x gradlew'
+            sh './gradlew clean'
             sh './gradlew --b ./build.gradle build -x test'
         }
        

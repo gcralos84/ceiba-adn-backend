@@ -7,7 +7,7 @@ import com.ceiba.citamedica.carlos.gonzalez.especialista.puerto.repositorio.Repo
 
 public class ServicioCrearEspecialista {
     private  final RepositorioEspecialista repositorioEspecialista;
-    private final Mensage EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
+    private static final Mensage EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
     
     
     public ServicioCrearEspecialista(RepositorioEspecialista repositorioEspecialista) {

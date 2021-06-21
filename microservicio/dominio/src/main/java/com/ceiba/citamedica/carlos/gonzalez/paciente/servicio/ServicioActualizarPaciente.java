@@ -7,7 +7,7 @@ import com.ceiba.citamedica.carlos.gonzalez.paciente.puerto.repositorio.Reposito
 
 public class ServicioActualizarPaciente {
     private  final RepositorioPaciente repositorioPaciente;
-    private final Mensage EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
+    private static final Mensage EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
     
     public ServicioActualizarPaciente(RepositorioPaciente repositorioPaciente) {
         this.repositorioPaciente = repositorioPaciente;

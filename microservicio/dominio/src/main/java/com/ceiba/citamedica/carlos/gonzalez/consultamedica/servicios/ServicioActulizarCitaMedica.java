@@ -7,7 +7,7 @@ import com.ceiba.citamedica.carlos.gonzalez.dominio.excepcion.ExcepcionDuplicida
 
 public class ServicioActulizarCitaMedica {
      private final RepositorioConsultaMedica repositorioConsultaMedica;
-     private final Mensage  LA_CITA_MEDICA_NO_EXISTE  =  Mensage.CITA_MEDICA_NO_EXISTE;
+    private static final Mensage  LA_CITA_MEDICA_NO_EXISTE  =  Mensage.CITA_MEDICA_NO_EXISTE;
 
     public ServicioActulizarCitaMedica(RepositorioConsultaMedica repositorioConsultaMedica) {
         this.repositorioConsultaMedica = repositorioConsultaMedica;
