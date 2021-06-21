@@ -4,6 +4,7 @@ import com.ceiba.citamedica.carlos.gonzalez.BasePrueba;
 import com.ceiba.citamedica.carlos.gonzalez.consultamedica.servicio.testdatabuilder.ConsultaMedicaTestDataBuilder;
 import com.ceiba.citamedica.carlos.gonzalez.consultamedica.modelo.entidad.ConsultaMedica;
 import com.ceiba.citamedica.carlos.gonzalez.consultamedica.puerto.repositorio.RepositorioConsultaMedica;
+import com.ceiba.citamedica.carlos.gonzalez.consultamedica.servicios.ServicioActulizarCitaMedica;
 import com.ceiba.citamedica.carlos.gonzalez.consultamedica.servicios.ServicioCrearConsultaMedica;
 import com.ceiba.citamedica.carlos.gonzalez.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.citamedica.carlos.gonzalez.especialista.puerto.repositorio.RepositorioEspecialista;
@@ -60,12 +61,14 @@ public class ServicioCrearConsultaMedicaTest {
     public void   calcularCuotamoderadoraUsuarioTipoIIITest(){
         Assert.assertEquals(37885.284, servicioCrearConsultaMedica.cuoataModeradora("TIPO_III"),DELTA);
     }
-   /*@Test
-    public void   calcularCuotamoderadoraUsuarioTipoIIIITest(){
-        thrown.expect(ExcepcionValorInvalido.class);
-        thrown.expectMessage("El tipo de usuario no es valido");
-        servicioCrearConsultaMedica.cuoataModeradora("TIPO_III");
-    }*/
 
+    @Test
+    public void  actulizarConsultaMedicaTest(){
+        Mockito.when(repositorioConsultaMedica.existe(Mockito.anyLong())).thenReturn(false);
+        ServicioActulizarCitaMedica servicioActulizarCitaMedica  =
+                new ServicioActulizarCitaMedica(repositorioConsultaMedica);
+         BasePrueba.assertThrows(()-> servicioActulizarCitaMedica.ejecutar(consultaMedica),ExcepcionDuplicidad.class,"La cita  medica  no existe");
+
+    }
 
 }

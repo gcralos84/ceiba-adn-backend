@@ -10,7 +10,7 @@ import static com.ceiba.citamedica.carlos.gonzalez.dominio.ValidadorArgumento.va
 @Getter
 public class ConsultaMedica {
     private static final  Mensage SE_DEBE_INGRESAR_INFORMACION_ESPECILISTA = Mensage.MENSAGE_INFORMACION_ESPECIALISTA_REQUERIDO;
-    private static final  Mensage SE_DEBE_INGRESAR_INFORMACION_PACIENTE = Mensage.MENSAGE_INFORMACION_PACIENTE_REQUERIDO;;
+    private static final  Mensage SE_DEBE_INGRESAR_INFORMACION_PACIENTE = Mensage.MENSAGE_INFORMACION_PACIENTE_REQUERIDO;
     private static final  Mensage SE_DEBE_INGRESAR_LA_FECHA_CITA  = Mensage.MENSAGE_FECHA_CITA__REQUERIDO;
     private static final  Mensage SE_DEBE_INGRESAR_EL_TIPO_USUARIO  = Mensage.MENSAGE_TIPO_USUARIO_REQUERIDO;
 
