@@ -13,6 +13,7 @@ public class ServicioCrearConsultaMedica {
     private final RepositorioConsultaMedica repositorioConsultaMedica;
     private final RepositorioPaciente  repositorioPaciente;
     private final RepositorioEspecialista repositorioEspecialista;
+    private  static final  double SMLDV  = 30284;
     private static final String TIPO_I = "TIPO_I";
     private static final String TIPO_II = "TIPO_II";
     private static final String TIPO_III = "TIPO_III";
@@ -47,7 +48,7 @@ public class ServicioCrearConsultaMedica {
              throw new ExcepcionDuplicidad(EL_ESPECILISTA_NO_SE_ENCUENTRA_REGISTRADO.getMensage());
     }
     public   double  cuoataModeradora(String  tipoUsuario){
-        double SMLDV  = 30284;
+
         double montoCuoataModeradora = 0;
            switch (tipoUsuario){
                case TIPO_I:

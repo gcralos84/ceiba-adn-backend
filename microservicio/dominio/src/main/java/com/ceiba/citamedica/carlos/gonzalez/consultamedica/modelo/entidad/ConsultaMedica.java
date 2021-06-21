@@ -32,7 +32,6 @@ public class ConsultaMedica {
         this.identificacionPaciente = identificacionPaciente;
         this.fechaCita = fechaCita;
         this.tipoUsuario = tipoUsuario;
-        //this.valorCuotaModeradora = valorCuotaModeradora;
     }
 
     public void setValorCuotaModeradora(double valorCuotaModeradora) {
