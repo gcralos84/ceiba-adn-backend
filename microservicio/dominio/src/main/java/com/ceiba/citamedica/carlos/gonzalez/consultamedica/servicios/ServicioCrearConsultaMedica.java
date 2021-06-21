@@ -16,9 +16,9 @@ public class ServicioCrearConsultaMedica {
     private final String TIPO_I = "TIPO_I";
     private final String TIPO_II = "TIPO_II";
     private final String TIPO_III = "TIPO_III";
-    Mensage EL_ESPECILISTA_NO_SE_ENCUENTRA_REGISTRADO  =  Mensage.MENSAGE_ESPECIALISTA_NO_ESTA_RESGISTRADO;
-    Mensage EL_PACIENTE_NO_ESTA_REGISTRADO  =  Mensage.MENSAGE_PACIENTE_NO_ESTA_RESGISTRADO;
-    Mensage El_TIPO_USUARIO_NO_ES_VALIDO = Mensage.TIPO_USUARIO_NO_VALIDO;
+    private final Mensage EL_ESPECILISTA_NO_SE_ENCUENTRA_REGISTRADO  =  Mensage.MENSAGE_ESPECIALISTA_NO_ESTA_RESGISTRADO;
+    private final Mensage EL_PACIENTE_NO_ESTA_REGISTRADO  =  Mensage.MENSAGE_PACIENTE_NO_ESTA_RESGISTRADO;
+    private final Mensage El_TIPO_USUARIO_NO_ES_VALIDO = Mensage.TIPO_USUARIO_NO_VALIDO;
     
     public ServicioCrearConsultaMedica(RepositorioConsultaMedica repositorioConsultaMedica,
                                        RepositorioPaciente repositorioPaciente,

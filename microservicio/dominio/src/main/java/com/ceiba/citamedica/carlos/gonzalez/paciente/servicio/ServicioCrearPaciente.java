@@ -8,7 +8,7 @@ import com.ceiba.citamedica.carlos.gonzalez.paciente.modelo.entidad.Paciente;
 public class ServicioCrearPaciente {
     
     private  final RepositorioPaciente repositorioPaciente;
-    Mensage  EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
+    private final Mensage  EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
     
     public ServicioCrearPaciente(RepositorioPaciente repositorioPaciente) {
         this.repositorioPaciente = repositorioPaciente;
