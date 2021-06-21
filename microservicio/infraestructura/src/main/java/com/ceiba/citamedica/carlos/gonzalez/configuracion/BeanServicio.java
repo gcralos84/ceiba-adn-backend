@@ -12,30 +12,13 @@ import com.ceiba.citamedica.carlos.gonzalez.paciente.puerto.repositorio.Reposito
 import com.ceiba.citamedica.carlos.gonzalez.paciente.servicio.ServicioActualizarPaciente;
 import com.ceiba.citamedica.carlos.gonzalez.paciente.servicio.ServicioCrearPaciente;
 import com.ceiba.citamedica.carlos.gonzalez.paciente.servicio.ServicioEliminarPaciente;
-import com.ceiba.citamedica.carlos.gonzalez.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.citamedica.carlos.gonzalez.usuario.servicio.ServicioActualizarUsuario;
-import com.ceiba.citamedica.carlos.gonzalez.usuario.servicio.ServicioCrearUsuario;
-import com.ceiba.citamedica.carlos.gonzalez.usuario.servicio.ServicioEliminarUsuario;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanServicio {
 
-    @Bean
-    public ServicioCrearUsuario servicioCrearUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioCrearUsuario(repositorioUsuario);
-    }
 
-    @Bean
-    public ServicioEliminarUsuario servicioEliminarUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioEliminarUsuario(repositorioUsuario);
-    }
-
-    @Bean
-    public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioActualizarUsuario(repositorioUsuario);
-    }
     @Bean
     public ServicioCrearPaciente servicioRegistrarPaciente(RepositorioPaciente repositorioPaciente){
          return  new ServicioCrearPaciente(repositorioPaciente);
