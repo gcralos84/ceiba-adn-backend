@@ -16,12 +16,12 @@ public class MapeoDetalleconsulta  implements RowMapper<DtoDetalleConsulta>, Map
     public DtoDetalleConsulta mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         String identificacion = resultSet.getString("identificacion");
         String nombre = resultSet.getString("nombre");
-        String  nombreEspecilista = resultSet.getString("nombreEspecilista");
+        String  nombreEspecialista = resultSet.getString("nombreEspecialista");
         String  especialidad = resultSet.getString("especialidad");
         LocalTime horaCita = LocalTime.from(extraerLocalDateTime(resultSet,"horaCita"));
         LocalDate fechaCita =  extraerLocalDate(resultSet,"fechaCita");
         double cuoataModeradora = resultSet.getDouble("cuoataModeradora");
-        return new DtoDetalleConsulta(identificacion,nombre,nombreEspecilista,especialidad,horaCita,fechaCita,cuoataModeradora);
+        return new DtoDetalleConsulta(identificacion,nombre,nombreEspecialista,especialidad,horaCita,fechaCita,cuoataModeradora);
      
     }
 }
