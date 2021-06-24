@@ -8,7 +8,7 @@ import com.ceiba.citamedica.carlos.gonzalez.especialista.comando.manejador.Manej
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/especialista")
 @Api(tags={"Controlador comando  paciente"})
@@ -24,18 +24,18 @@ public class ComadoControladorEspecialista {
         this.manejadorActualizarEspecialista = manejadorActualizarEspecialista;
         this.manajadorEliminarEspecialista = manajadorEliminarEspecialista;
     }
-    @PostMapping
+    @RequestMapping(method = RequestMethod.POST)
     @ApiOperation("Crear especialista")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoEspecialista comandoEspecialista){
         return  manejadorCrearEspecialista.ejecutar(comandoEspecialista);
     }
-    @PutMapping(value = "/{id}")
+    @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     @ApiOperation("Actualizar especialista")
-    public void actualizar( @RequestBody  ComandoEspecialista comandoEspecialista, @PathVariable Long id){
-        comandoEspecialista.setId(id);
-        manejadorActualizarEspecialista.ejecutar(comandoEspecialista);
+    public void actualizar( @RequestBody  ComandoEspecialista comandoEspecialista, @PathVariable String  id){
+        manejadorActualizarEspecialista.ejecutar(comandoEspecialista,id);
     }
-    @DeleteMapping(value="/{id}")
+    
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     @ApiOperation("Eliminar especialista")
     public void  eliminar(@PathVariable Long id){
         manajadorEliminarEspecialista.ejecutar(id);

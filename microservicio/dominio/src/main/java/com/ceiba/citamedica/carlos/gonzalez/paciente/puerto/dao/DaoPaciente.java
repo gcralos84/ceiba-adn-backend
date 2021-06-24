@@ -1,5 +1,6 @@
 package com.ceiba.citamedica.carlos.gonzalez.paciente.puerto.dao;
 
+import com.ceiba.citamedica.carlos.gonzalez.paciente.modelo.dto.DtoDetalleConsulta;
 import com.ceiba.citamedica.carlos.gonzalez.paciente.modelo.dto.DtoPaciente;
 
 
@@ -11,6 +12,8 @@ public interface  DaoPaciente {
      * @return los pacientes
      */
     List<DtoPaciente> listar();
+    List<DtoPaciente> detallePaciente( String  id);
+    List<DtoDetalleConsulta> detalleConsulta();
     
     
 }

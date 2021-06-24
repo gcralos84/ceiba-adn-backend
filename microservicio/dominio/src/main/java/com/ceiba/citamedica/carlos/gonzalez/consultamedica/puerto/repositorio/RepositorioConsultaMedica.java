@@ -28,6 +28,7 @@ public interface RepositorioConsultaMedica {
      * @return si existe o no
      */
     boolean existe(Long id);
+    
 
 
 }

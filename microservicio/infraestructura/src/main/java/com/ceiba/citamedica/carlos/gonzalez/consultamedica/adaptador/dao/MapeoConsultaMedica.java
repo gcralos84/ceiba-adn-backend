@@ -4,9 +4,10 @@ import com.ceiba.citamedica.carlos.gonzalez.consultamedica.modelo.dto.DtoConsult
 import com.ceiba.citamedica.carlos.gonzalez.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class MapeoConsultaMedica  implements RowMapper<DtoConsultaMedica>, MapperResult {
 
@@ -15,8 +16,10 @@ public class MapeoConsultaMedica  implements RowMapper<DtoConsultaMedica>, Mappe
         Long id = resultSet.getLong("id");
         String identificacionEspecialista   = resultSet.getString("identificacionEspecialista");
         String identificacionPaciente = resultSet.getString("identificacionPaciente");
-        Date fechaCita  =  resultSet.getDate("fechaCita");
+        LocalTime horaCita = LocalTime.from(extraerLocalDateTime(resultSet,"horaCita"));;
+        LocalDate fechaCita  =  extraerLocalDate(resultSet,"fechaCita");
         String tipoUsuario =  resultSet.getString("tipoUsuario");
-        return  new  DtoConsultaMedica( id, identificacionEspecialista,identificacionPaciente,fechaCita,tipoUsuario);
+        double cuoataModeradora  =  resultSet.getDouble("cuoataModeradora");
+        return  new  DtoConsultaMedica( id, identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario,cuoataModeradora);
     }
 }

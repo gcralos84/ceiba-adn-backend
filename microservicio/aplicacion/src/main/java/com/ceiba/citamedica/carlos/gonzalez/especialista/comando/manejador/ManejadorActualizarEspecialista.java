@@ -5,10 +5,11 @@ import com.ceiba.citamedica.carlos.gonzalez.especialista.modelo.entidad.Especial
 import com.ceiba.citamedica.carlos.gonzalez.especialista.servicio.ServicioActualizarEspecialista;
 import com.ceiba.citamedica.carlos.gonzalez.manejador.ManejadorComando;
 import com.ceiba.citamedica.carlos.gonzalez.especialista.ComandoEspecialista;
+import com.ceiba.citamedica.carlos.gonzalez.manejador.ManejadorComandoActulizar;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorActualizarEspecialista  implements ManejadorComando<ComandoEspecialista> {
+public class ManejadorActualizarEspecialista  implements ManejadorComandoActulizar<ComandoEspecialista,String> {
     
     public final FabricaEspecialista fabricaEspecialista;
     public final ServicioActualizarEspecialista servicioActualizarEspecialista;
@@ -18,8 +19,8 @@ public class ManejadorActualizarEspecialista  implements ManejadorComando<Comand
         this.servicioActualizarEspecialista = servicioActualizarEspecialista;
     }
     
-    public void ejecutar(ComandoEspecialista comando) {
+    public void ejecutar(ComandoEspecialista comando, String id) {
         Especialista especialista = this.fabricaEspecialista.crear(comando);
-        this.servicioActualizarEspecialista.ejecutar(especialista);
+        this.servicioActualizarEspecialista.ejecutar(especialista,id);
     }
 }

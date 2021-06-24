@@ -1,7 +1,10 @@
 package com.ceiba.citamedica.carlos.gonzalez.especialista.puerto.repositorio;
 
 
+import com.ceiba.citamedica.carlos.gonzalez.especialista.modelo.dto.DtoEspecialista;
 import com.ceiba.citamedica.carlos.gonzalez.especialista.modelo.entidad.Especialista;
+
+import java.util.List;
 
 public interface RepositorioEspecialista {
     /**
@@ -29,4 +32,6 @@ public interface RepositorioEspecialista {
      * @return si existe o no
      */
     boolean existe(String identificacion);
+    
+   
 }

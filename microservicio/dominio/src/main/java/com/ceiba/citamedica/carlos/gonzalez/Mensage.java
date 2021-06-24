@@ -17,7 +17,10 @@ public enum Mensage {
     MENSAGE_FECHA_NACIMIENTO_REQUERIDO("La fecha de nacimiento es requerida"),
     MENSAGE_FECHA_NACIMIENTO_INVALIDA("La fecha de nacimiento no es validad"),
     TIPO_USUARIO_NO_VALIDO("El tipo de usuario no es valido"),
-    CITA_MEDICA_NO_EXISTE("La cita  medica  no existe");
+    CITA_MEDICA_NO_EXISTE("La cita  medica  no existe"),
+    MENSAGE_FECHA_CITA_IVALIDAD("La fecha de la cita es de Lunes A Viernes"),
+    MENSAGE_HORA_CITA_IVALIDAD("La hora de la cita  son de 7:00 AM a 8:00 PM"),
+    MENSAGE_FECHA_CITA_IVALIDAD_POSTERIOR_AL_DIA_ACTUAL("La fecha de la cita debe ser posterior a la fecha actual");
     private  String  mensage;
     
     private  Mensage(String mensage) {

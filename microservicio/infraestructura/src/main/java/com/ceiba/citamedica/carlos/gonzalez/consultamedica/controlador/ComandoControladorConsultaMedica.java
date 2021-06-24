@@ -8,7 +8,7 @@ import com.ceiba.citamedica.carlos.gonzalez.consultamedica.comando.manejador.Man
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/consultamedica")
 @Api(tags={"Controlador comando  consulta medica"})
@@ -23,8 +23,8 @@ public class ComandoControladorConsultaMedica {
         this.manejadorActulizarConsultaMedica = manejadorActulizarConsultaMedica;
         this.manejadorEliminarConsultaMedica = manejadorEliminarConsultaMedica;
     }
-
-    @PostMapping
+    
+    @RequestMapping(method = RequestMethod.POST)
     @ApiOperation("Crear  cita medica")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoConsultaMedica comandoConsultaMedica){
         return  manejadorCrearConsultaMedica.ejecutar(comandoConsultaMedica);

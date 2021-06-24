@@ -7,21 +7,20 @@ import com.ceiba.citamedica.carlos.gonzalez.especialista.puerto.repositorio.Repo
 
 public class ServicioActualizarEspecialista {
     private final RepositorioEspecialista repositorioEspecialista;
-    private static final Mensage EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA  =  Mensage.MENSAGE_USUARIO_YA_RESGISTRADO;
-    
+    private static final Mensage EL_ESPECIALISTA_NO_ESTA_RESGISTRADO = Mensage.MENSAGE_ESPECIALISTA_NO_ESTA_RESGISTRADO;
     public ServicioActualizarEspecialista(RepositorioEspecialista repositorioEspecialista) {
         this.repositorioEspecialista = repositorioEspecialista;
     }
     
-    public void ejecutar(Especialista especialista){
-        validarExistenciaPrevia(especialista);
+    public void ejecutar(Especialista especialista, String id ){
+        validarExistenciaPrevia(id);
         this.repositorioEspecialista.actualizar(especialista);
     }
     
-    private void validarExistenciaPrevia(Especialista especialista) {
-      boolean existe = this.repositorioEspecialista.existe(especialista.getIdentificacion());
-      if(existe)
-          throw  new ExcepcionDuplicidad(EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA.getMensage());
+    private void validarExistenciaPrevia(String id) {
+      boolean existe = this.repositorioEspecialista.existe(id);
+      if(!existe)
+          throw  new ExcepcionDuplicidad(EL_ESPECIALISTA_NO_ESTA_RESGISTRADO.getMensage());
       
     }
     

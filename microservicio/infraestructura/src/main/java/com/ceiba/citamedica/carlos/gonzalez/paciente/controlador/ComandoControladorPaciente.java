@@ -8,7 +8,7 @@ import com.ceiba.citamedica.carlos.gonzalez.paciente.comando.manejador.Manejador
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/paciente")
 @Api(tags={"Controlador comando  paciente"})
@@ -23,7 +23,6 @@ public class ComandoControladorPaciente {
         this.manejadorActulizarPaciente = manejadorActulizarPaciente;
         this.manejadorEliminarPaciente = manejadorEliminarPaciente;
     }
-    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation("Crear Paciente")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoPaciente comandoPaciente){

@@ -2,6 +2,7 @@ package com.ceiba.citamedica.carlos.gonzalez.dominio;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
@@ -104,5 +105,29 @@ public class ValidadorArgumento {
         if(fechaFinal.isAfter(fechaInicial))
             throw  new ExcepcionValorInvalido(mensaje);
 
+    }
+    
+    public static  void  validarFechaCitaMedica(LocalDate  fechaCita,String mensaje){
+	      
+       if((LocalDate.parse(fechaCita.toString()).getDayOfWeek().name().equals("SATURDAY")) ||
+               (LocalDate.parse(fechaCita.toString()).getDayOfWeek().name().equals("SUNDAY"))){
+           throw  new ExcepcionValorInvalido(mensaje);
+       }
+    }
+    public static  void  validarFechaDiaVencido(LocalDate  fechaCita,  String  mensaje){
+        LocalDate fechaActual  = LocalDate.now();
+	    LocalDate fechaIngresada = LocalDate.parse(fechaCita.toString());
+	    LocalDate fechaComparacion = LocalDate.parse(fechaActual.toString());
+	    if((fechaIngresada.isBefore(fechaComparacion)) || ( fechaIngresada.isEqual(fechaComparacion))){
+            throw  new ExcepcionValorInvalido(mensaje);
+        }
+    }
+    public static  void validarHoracita(LocalTime horaCita, String mensaje){
+	      LocalTime horaIngresada = LocalTime.parse(horaCita.toString());
+	      LocalTime horaLimiteSuperior = LocalTime.parse("20:00:00");
+	      LocalTime horaLimiteInferior = LocalTime.parse("07:00:00");
+	      if((horaIngresada.isAfter(horaLimiteSuperior)) || (horaIngresada.isBefore(horaLimiteInferior))){
+              throw  new ExcepcionValorInvalido(mensaje);
+          }
     }
 }

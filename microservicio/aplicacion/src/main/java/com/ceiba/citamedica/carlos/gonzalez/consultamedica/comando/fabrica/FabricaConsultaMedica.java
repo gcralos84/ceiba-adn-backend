@@ -11,8 +11,9 @@ public class FabricaConsultaMedica {
                   comandoConsultaMedica.getId(),
                   comandoConsultaMedica.getIdentificacionEspecialista(),
                   comandoConsultaMedica.getIdentificacionPaciente(),
-                  comandoConsultaMedica.getTipoUsuario(),
-                  comandoConsultaMedica.getFechaCita()
+                  comandoConsultaMedica.getHoraCita(),
+                  comandoConsultaMedica.getFechaCita(),
+                  comandoConsultaMedica.getTipoUsuario()
                   );
       }
 }

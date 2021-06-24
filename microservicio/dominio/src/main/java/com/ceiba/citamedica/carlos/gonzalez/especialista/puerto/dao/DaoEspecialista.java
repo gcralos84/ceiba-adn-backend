@@ -10,4 +10,6 @@ public interface DaoEspecialista {
      * @return los especilistas
      */
     List<DtoEspecialista> listar();
+    List<DtoEspecialista> consultarAgenda(String fechaCita, String horaCita);
+
 }

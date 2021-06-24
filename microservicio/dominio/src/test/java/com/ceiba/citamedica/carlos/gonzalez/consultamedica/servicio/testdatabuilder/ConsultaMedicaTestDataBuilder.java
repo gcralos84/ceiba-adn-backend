@@ -3,20 +3,24 @@ package com.ceiba.citamedica.carlos.gonzalez.consultamedica.servicio.testdatabui
 import com.ceiba.citamedica.carlos.gonzalez.consultamedica.modelo.entidad.ConsultaMedica;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class ConsultaMedicaTestDataBuilder {
 
     private Long  id;
     private String identificacionEspecialista;
     private String identificacionPaciente;
+    private LocalTime horaCita;
     private LocalDate fechaCita;
     private String tipoUsuario;
 
     public ConsultaMedicaTestDataBuilder() {
         LocalDate localDate = LocalDate.now();
+        LocalTime localTime = LocalTime.now();
         this.id = 1L;
         this.identificacionEspecialista = "90909090";
         this.identificacionPaciente = "162439861";
+        this.horaCita = localTime;
         this.fechaCita = localDate;
         this.tipoUsuario = "TIPO_I";
     }
@@ -33,6 +37,10 @@ public class ConsultaMedicaTestDataBuilder {
         this.identificacionPaciente = identificacionPaciente;
         return this;
     }
+    public  ConsultaMedicaTestDataBuilder  conHoraCita( LocalTime horaCita){
+        this.horaCita = horaCita;
+        return this;
+    }
     public ConsultaMedicaTestDataBuilder conFechaCita( LocalDate  fechaCita){
           this.fechaCita = fechaCita;
           return this;
@@ -44,6 +52,6 @@ public class ConsultaMedicaTestDataBuilder {
 
     public ConsultaMedica  build(){
         return new ConsultaMedica( id,identificacionEspecialista, identificacionPaciente,
-                tipoUsuario,fechaCita);
+               horaCita, fechaCita,tipoUsuario);
     }
 }

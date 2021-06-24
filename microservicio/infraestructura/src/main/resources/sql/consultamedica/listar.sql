@@ -1,2 +1,2 @@
-SELECT id, identificacionEspecialista,identificacionPaciente,fechaCita,tipoUsuario
+SELECT id, identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario,cuoataModeradora
 FROM  consultamedicas;

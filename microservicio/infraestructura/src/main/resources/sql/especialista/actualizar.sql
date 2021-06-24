@@ -1,6 +1,6 @@
 UPDATE  especialistas SET
     identificacion = :identificacion,
-    nombre = :identificacion,
+    nombre = :nombre,
     especialidad = :especialidad
 WHERE  identificacion = :identificacion;
 
