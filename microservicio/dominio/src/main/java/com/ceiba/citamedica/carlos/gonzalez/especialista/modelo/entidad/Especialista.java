@@ -15,8 +15,9 @@ public class Especialista {
     private String identificacion;
     private String nombre;
     private String especialidad;
+    private Boolean active;
     
-    public Especialista(Long id, String identificacion, String nombre, String especialidad) {
+    public Especialista(Long id, String identificacion, String nombre, String especialidad,boolean active) {
         validarObligatorio(identificacion,SE_DEBE_INGRESAR_IDENTIFICACION_USUARIO.getMensage());
         validarObligatorio(nombre,SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO.getMensage());
         validarObligatorio(especialidad,SE_DEBE_INGREZAR_LA_ESPECILIDAD.getMensage());
@@ -24,5 +25,6 @@ public class Especialista {
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.especialidad = especialidad;
+        this.active = active;
     }
 }

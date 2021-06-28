@@ -20,6 +20,8 @@ public class MapeoConsultaMedica  implements RowMapper<DtoConsultaMedica>, Mappe
         LocalDate fechaCita  =  extraerLocalDate(resultSet,"fechaCita");
         String tipoUsuario =  resultSet.getString("tipoUsuario");
         double cuoataModeradora  =  resultSet.getDouble("cuoataModeradora");
-        return  new  DtoConsultaMedica( id, identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario,cuoataModeradora);
+        Boolean active  =  resultSet.getBoolean("active");
+        return  new  DtoConsultaMedica( id, identificacionEspecialista,identificacionPaciente,
+                horaCita,fechaCita,tipoUsuario,cuoataModeradora,active);
     }
 }

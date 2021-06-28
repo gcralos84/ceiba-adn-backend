@@ -19,4 +19,5 @@ public class ComandoConsultaMedica {
     private LocalTime horaCita;
     private LocalDate fechaCita;
     private String tipoUsuario;
+    private Boolean Active;
 }

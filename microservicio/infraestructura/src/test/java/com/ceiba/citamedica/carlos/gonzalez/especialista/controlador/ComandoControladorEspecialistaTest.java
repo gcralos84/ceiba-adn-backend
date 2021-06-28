@@ -45,9 +45,8 @@ public class ComandoControladorEspecialistaTest {
     @Test
     public void  actulizarTest() throws Exception {
         //act - assert
-        String  identificacion ="162439866";
         //act - assert
-        mocMvc.perform(put("/especialista/{id}",identificacion)
+        mocMvc.perform(put("/especialista/{id}","16243986")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(especialista)))
                 .andExpect(status().isOk());
@@ -55,9 +54,8 @@ public class ComandoControladorEspecialistaTest {
     @Test
     public void  eliminarTest() throws Exception {
         //act - assert
-        String  identificacion ="162439866";
         //act - assert
-        mocMvc.perform(delete("/especialista/{id}",identificacion)
+        mocMvc.perform(delete("/especialista/{id}",especialista.getIdentificacion())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(especialista)))
                 .andExpect(status().isOk());

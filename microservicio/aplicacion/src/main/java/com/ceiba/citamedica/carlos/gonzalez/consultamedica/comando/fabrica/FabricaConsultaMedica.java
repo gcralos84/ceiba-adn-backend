@@ -13,7 +13,8 @@ public class FabricaConsultaMedica {
                   comandoConsultaMedica.getIdentificacionPaciente(),
                   comandoConsultaMedica.getHoraCita(),
                   comandoConsultaMedica.getFechaCita(),
-                  comandoConsultaMedica.getTipoUsuario()
+                  comandoConsultaMedica.getTipoUsuario(),
+                  comandoConsultaMedica.getActive()
                   );
       }
 }

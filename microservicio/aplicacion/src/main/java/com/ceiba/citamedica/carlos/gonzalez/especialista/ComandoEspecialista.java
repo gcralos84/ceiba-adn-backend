@@ -14,4 +14,5 @@ public class ComandoEspecialista {
     private String identificacion;
     private String nombre;
     private String especialidad;
+    private Boolean active;
 }

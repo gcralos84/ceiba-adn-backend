@@ -11,7 +11,8 @@ public class FabricaEspecialista {
                 comandoEspecialista.getId(),
                 comandoEspecialista.getIdentificacion(),
                 comandoEspecialista.getNombre(),
-                comandoEspecialista.getEspecialidad()
+                comandoEspecialista.getEspecialidad(),
+                comandoEspecialista.getActive()
         );
      }
 }

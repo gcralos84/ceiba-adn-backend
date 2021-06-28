@@ -17,5 +17,6 @@ public class DtoConsultaMedica {
      private LocalDate fechaCita;
      private String tipoUsuario;
      private double cuoataModeradora;
+     private Boolean  actuive;
 
 }

@@ -13,16 +13,18 @@ public class ConsultaMedicaTestDataBuilder {
     private LocalTime horaCita;
     private LocalDate fechaCita;
     private String tipoUsuario;
+    private Boolean active;
 
     public ConsultaMedicaTestDataBuilder() {
-        LocalDate localDate = LocalDate.now();
-        LocalTime localTime = LocalTime.now();
+        LocalDate localDate = LocalDate.of(2021, 06, 30);
+        LocalTime localTime = LocalTime.of(07,00,00);
         this.id = 1L;
         this.identificacionEspecialista = "90909090";
         this.identificacionPaciente = "162439861";
         this.horaCita = localTime;
         this.fechaCita = localDate;
         this.tipoUsuario = "TIPO_I";
+        this.active = Boolean.TRUE;
     }
 
     public ConsultaMedicaTestDataBuilder  conId(Long id){
@@ -49,9 +51,13 @@ public class ConsultaMedicaTestDataBuilder {
         this.tipoUsuario = tipoUsuario;
         return this;
     }
+    public ConsultaMedicaTestDataBuilder conActive( Boolean Active){
+        this.active = active;
+        return this;
+    }
 
     public ConsultaMedica  build(){
         return new ConsultaMedica( id,identificacionEspecialista, identificacionPaciente,
-               horaCita, fechaCita,tipoUsuario);
+               horaCita, fechaCita,tipoUsuario,active);
     }
 }

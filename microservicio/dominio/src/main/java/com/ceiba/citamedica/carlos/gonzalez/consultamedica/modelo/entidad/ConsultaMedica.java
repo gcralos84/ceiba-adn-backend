@@ -25,8 +25,10 @@ public class ConsultaMedica {
     private LocalDate fechaCita;
     private String tipoUsuario;
     private double cuoataModeradora;
+    private Boolean active;
     
-    public ConsultaMedica(Long id, String identificacionEspecialista, String identificacionPaciente,LocalTime horaCita,LocalDate fechaCita,String tipoUsuario) {
+    public ConsultaMedica(Long id, String identificacionEspecialista, String identificacionPaciente,
+                          LocalTime horaCita,LocalDate fechaCita,String tipoUsuario, Boolean active) {
         
         validarObligatorio(identificacionEspecialista,SE_DEBE_INGRESAR_INFORMACION_ESPECILISTA.getMensage());
         validarObligatorio(identificacionPaciente,SE_DEBE_INGRESAR_INFORMACION_PACIENTE.getMensage());
@@ -41,6 +43,7 @@ public class ConsultaMedica {
         this.horaCita =horaCita;
         this.fechaCita = fechaCita;
         this.tipoUsuario = tipoUsuario;
+        this.active = active;
     }
 
     public void setValorCuotaModeradora(double valorCuotaModeradora) {

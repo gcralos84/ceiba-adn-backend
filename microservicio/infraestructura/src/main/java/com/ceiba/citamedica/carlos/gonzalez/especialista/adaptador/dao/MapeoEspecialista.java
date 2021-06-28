@@ -13,7 +13,8 @@ public class MapeoEspecialista  implements RowMapper<DtoEspecialista>, MapperRes
         Long id  =  resultSet.getLong("id");
         String identificacion  =  resultSet.getString("identificacion");
         String nombre = resultSet.getString("nombre");
-        String  especialidad  = resultSet.getString("especialidad");
-        return new DtoEspecialista(id,identificacion,nombre,especialidad);
+        String especialidad  = resultSet.getString("especialidad");
+        Boolean active  = resultSet.getBoolean("active");
+        return new DtoEspecialista(id,identificacion,nombre,especialidad,active);
     }
 }

@@ -8,12 +8,14 @@ public class EspecialistaTestDataBilder {
     private String identificacion;
     private String nombre;
     private String especialidad;
+    private  boolean active;
     
     public EspecialistaTestDataBilder() {
         this.id = 1L;
         this.identificacion = "16243986";
         this.nombre = "Luis Arturo Gonzalez";
         this.especialidad = "Medico General";
+        this.active=true;
     }
     
     
@@ -33,8 +35,12 @@ public class EspecialistaTestDataBilder {
         this.especialidad = especialidad;
         return this;
     }
+    public EspecialistaTestDataBilder conActive(boolean active){
+        this.active = active;
+        return this;
+    }
     public Especialista build(){
-        return new Especialista(id,identificacion,nombre,especialidad);
+        return new Especialista(id,identificacion,nombre,especialidad,active);
     };
     
 }

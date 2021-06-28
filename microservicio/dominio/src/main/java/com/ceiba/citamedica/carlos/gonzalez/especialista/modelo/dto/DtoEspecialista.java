@@ -10,4 +10,5 @@ public class DtoEspecialista {
     private String identificacion;
     private String nombre;
     private String especialista;
+    private Boolean active;
 }

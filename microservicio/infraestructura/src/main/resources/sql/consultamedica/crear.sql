@@ -1,2 +1,2 @@
-INSERT INTO consultamedicas (identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario,cuoataModeradora)
-VALUES(:identificacionEspecialista,:identificacionPaciente,:horaCita,:fechaCita,:tipoUsuario,:cuoataModeradora);
+INSERT INTO consultamedicas (identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario,cuoataModeradora,active)
+VALUES(:identificacionEspecialista,:identificacionPaciente,:horaCita,:fechaCita,:tipoUsuario,:cuoataModeradora,:active);

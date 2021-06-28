@@ -20,6 +20,7 @@ public class ManejadorCrearConsultaMedica  implements ManejadorComandoRespuesta<
 
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoConsultaMedica comando) {
+        comando.setActive(Boolean.TRUE);
         ConsultaMedica consultaMedica = this.fabricaConsultaMedica.crear(comando);
         return new ComandoRespuesta<>(this.servicioCrearConsultaMedica.ejecutar(consultaMedica));
     }

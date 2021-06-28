@@ -14,6 +14,7 @@ public class ManejadorEliminarConsultaMedica  implements ManejadorComando<Long> 
 
     @Override
     public void ejecutar(Long comando) {
-         this.servicioEliminarCitaMedica.ejecutar(comando);
+        
+        this.servicioEliminarCitaMedica.ejecutar(comando);
     }
 }

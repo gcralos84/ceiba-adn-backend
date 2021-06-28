@@ -1,2 +1,2 @@
-SELECT id,identificacion,nombre,especialidad
+SELECT id,identificacion,nombre,especialidad,active
 FROM  especialistas;

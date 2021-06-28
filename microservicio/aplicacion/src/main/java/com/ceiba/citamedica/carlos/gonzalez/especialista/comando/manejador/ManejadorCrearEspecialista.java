@@ -19,6 +19,7 @@ public class ManejadorCrearEspecialista  implements ManejadorComandoRespuesta<Co
     }
     
     public ComandoRespuesta<Long> ejecutar(ComandoEspecialista comando){
+        comando.setActive(Boolean.TRUE);
         Especialista especialista  = this.fabricaEspecialista.crear(comando);
        return new  ComandoRespuesta<>(this.servicioCrearEspecialista.ejecutar(especialista));
     }

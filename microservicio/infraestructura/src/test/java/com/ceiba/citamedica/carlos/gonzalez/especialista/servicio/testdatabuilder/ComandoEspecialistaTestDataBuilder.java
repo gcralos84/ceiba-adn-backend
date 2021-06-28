@@ -7,12 +7,14 @@ public class ComandoEspecialistaTestDataBuilder {
     private String identificacion;
     private String nombre;
     private String especialidad;
+    private Boolean active;
     
     public ComandoEspecialistaTestDataBuilder() {
-        this.id= 1L;
+        this.id= 2L;
         this.identificacion="162439866";
         this.nombre="Luis Arturo Gonzalez Alvarez";
         this.especialidad="Medico General";
+        this.active = Boolean.TRUE;
     }
     public ComandoEspecialistaTestDataBuilder conId( Long id ){
          this.id= id;
@@ -30,8 +32,12 @@ public class ComandoEspecialistaTestDataBuilder {
          this.especialidad= especialidad;
          return this;
     }
+    public  ComandoEspecialistaTestDataBuilder conActive(Boolean  active){
+         this.active= active;
+         return this;
+    }
     public ComandoEspecialista  build(){
-          return new ComandoEspecialista(id,identificacion,nombre,especialidad);
+          return new ComandoEspecialista(id,identificacion,nombre,especialidad,active);
     }
     
 }

@@ -13,18 +13,18 @@ public class ComandoConsultaMedicaTestDataBuilder {
     private LocalTime horaCita;
     private LocalDate fechaCita;
     private String tipoUsuario;
-    private double valorCuotaModeradora;
+    private Boolean  active;
 
     public ComandoConsultaMedicaTestDataBuilder() {
-        LocalDate localDate =   LocalDate.now();
-        LocalTime localTime = LocalTime.now();
+        LocalDate localDate = LocalDate.of(2021, 06, 30);
+        LocalTime localTime = LocalTime.of(07,00,00);
         this.id =  1L;
         this.identificacionEspecialista = "16243986";
         this.identificacionPaciente = "94552554";
         this.horaCita=localTime;
         this.fechaCita = localDate;
         this.tipoUsuario = "TIPO_II";
-        this.valorCuotaModeradora = 3543.228;
+        //this.valorCuotaModeradora = 3543.228;
     }
     public  ComandoConsultaMedicaTestDataBuilder  conId(Long  id){
          this.id = id;
@@ -52,11 +52,11 @@ public class ComandoConsultaMedicaTestDataBuilder {
         this.tipoUsuario = tipoUsuario;
         return this;
     }
-    public ComandoConsultaMedicaTestDataBuilder conValorCuotaModeradora( double valorCuotaModeradora){
-        this.valorCuotaModeradora = valorCuotaModeradora;
+    public ComandoConsultaMedicaTestDataBuilder conActive(Boolean active){
+        this.active = active;
         return this;
     }
     public ComandoConsultaMedica  build(){
-        return  new  ComandoConsultaMedica(id,identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario);
+        return  new  ComandoConsultaMedica(id,identificacionEspecialista,identificacionPaciente,horaCita,fechaCita,tipoUsuario,active);
     }
 }
